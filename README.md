@@ -35,4 +35,4 @@
 - GitHub
 
 ## 🚀 Clonar repositorio
-`git clone https://github.com/AlePesole/S1.01-Herencia-y-Polimorfismo.git` 
+`git clone https://github.com/AlePesole/S1.02-Exceptions.git` 
