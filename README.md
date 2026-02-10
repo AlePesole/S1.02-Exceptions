@@ -9,6 +9,7 @@
 - Compruebe si la colección está vacía.
 - Si está vacía, tire una excepción personalizada llamada `EmptySaleException`, con el mensaje: "Para hacer una venta primero debes añadir productos" .
 - Si hay productos, sume los precios y guarde el total en el atributo `totalPrice`.
+
 -La clase `EmptySaleExceptiondebe` ser hija de `Exception`, y debe incluir este mensaje en su constructor.
 
 ## 📌 Nivel 2 • Ejercicio 1 - Lectura segura desde el teclado
