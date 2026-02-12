@@ -7,7 +7,11 @@ public class Main {
         //Prueba ejecución normal del programa
         sale1.addProduct(new Product("Pizza",9.50));
         sale1.addProduct(new Product("Pasta",10.99));
-        sale1.calculateTotal();
+        try {
+            sale1.calculateTotal();
+        } catch (EmptySaleException e) {
+            System.out.println(e.getMessage());
+        }
         System.out.println("Productos:\n" + sale1.getProducts() + "\nTotal:" + sale1.getTotal());
 
         //Prueba acceder una posición inexistente de la lista
@@ -22,7 +26,11 @@ public class Main {
         Sale sale2 = new Sale();
         // Prueba checked-exception (lista vacía - sin interrumpir la ejecución)
         System.out.println("\n-------Prueba calcular total con lista vacía (checked)exception-------");
-        sale2.calculateTotal();
+        try {
+            sale2.calculateTotal();
+        } catch (EmptySaleException e) {
+            System.out.println(e.getMessage());
+        }
 
         // Prueba unchecked-exception (lista vacía - interrumpe la ejecución)
         System.out.println("\n-------Prueba calcular total con lista vacía (unchecked)exception-------");

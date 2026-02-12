@@ -25,23 +25,21 @@ public class Sale {
     }
 
     //Checked exception
-    public void calculateTotal() {
-        try {
-            if(products.isEmpty()) {
-                throw new EmptySaleException();
-            }
-            for (Product product : products) {
-                total += product.getPrice();
-            }
-            total = (double) Math.round(total * 100) / 100;
-        } catch (EmptySaleException e) {
-            System.out.println(e);
+    public void calculateTotal() throws EmptySaleException {
+        total = 0;
+        if (products.isEmpty()) {
+            throw new EmptySaleException();
         }
+        for (Product product : products) {
+            total += product.getPrice();
+        }
+        total = (double) Math.round(total * 100) / 100;
     }
 
     //Unchecked exception
     public void calculateTotal2() {
-        if(products.isEmpty()) {
+        total = 0;
+        if (products.isEmpty()) {
             throw new EmptySaleUncheckedException();
         }
         for (Product product : products) {

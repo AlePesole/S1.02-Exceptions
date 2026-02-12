@@ -7,7 +7,6 @@ public class Main {
         int varInt = ConsoleReader.readInt("Introducir décimo lotería navidad: ");
         float varFloat = ConsoleReader.readFloat("Introducir precio: ");
         double varDouble = ConsoleReader.readDouble("Introducir valor de PI: ");
-        ConsoleReader.nextLine();
 
         //NOTA: los métodos aceptan números como String, no hay verífica de solo carácteres.
         char varChar = ConsoleReader.readChar("Introducir inicial de tu nombre: ");

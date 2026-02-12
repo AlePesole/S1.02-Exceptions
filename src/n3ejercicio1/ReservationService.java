@@ -25,7 +25,6 @@ public class ReservationService {
                 seats.add(new Seat(i, j, "Empty"));
             }
         }
-        System.out.println(seats.size());
     }
 
     private void validateSeatPosition(int seat, int row) {

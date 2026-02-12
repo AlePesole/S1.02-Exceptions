@@ -74,8 +74,7 @@ public class ConsoleUI {
     }
 
     void showAllSeatsUI() {
-        ArrayList<Seat> seats = new ArrayList<>(reservationService.getAllSeats());
-        for (Seat seat : seats) {
+        for (Seat seat : reservationService.getAllSeats()) {
             System.out.print(seat.toStringNoName() + " ");
             if(seat.getSeat() == reservationService.getSeatsPerRow()) {
                 System.out.println();
@@ -108,6 +107,7 @@ public class ConsoleUI {
                 System.out.print("Nombre de la persona: ");
                 String personName = sc.nextLine();
                 reservationService.reserveSeat(seat, row, personName);
+                System.out.println("Reserva realizada correctamente");
                 exit = true;
             } catch (InvalidPersonNameException | SeatAlreadyTakenException | InvalidSeatException e) {
                 System.out.println(e.getMessage());
@@ -117,7 +117,6 @@ public class ConsoleUI {
                 exit = false;
             }
         } while (!exit);
-        System.out.println("Reserva realizada correctamente");
     }
 
     void seatCancellationUI() {
@@ -129,6 +128,7 @@ public class ConsoleUI {
                 System.out.print("Número de asiento: ");
                 int seat = sc.nextInt();
                 reservationService.cancelSeat(seat, row);
+                System.out.println("Reserva del asiento cancelada correctamente");
                 exit = true;
             } catch (InputMismatchException e) {
                 System.out.println("Solo números para asiento y fila");
@@ -138,7 +138,6 @@ public class ConsoleUI {
                 exit = false;
             }
         } while (!exit);
-        System.out.println("Reserva del asiento cancelada correctamente");
     }
 
     void seatCancellationByNameUI() {
